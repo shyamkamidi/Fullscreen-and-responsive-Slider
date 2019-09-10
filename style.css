@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+body, html{ width: 100%; height: 100%;}
+body{padding:0px; margin:0px; font-family:arial;}
+ul{padding:0px; margin:0px; list-style:none;}
+
+.banner-main{width:100%; height:100%; position: relative;}
+ul.banner-list{display: -webkit-flex; display:flex; width:100%; height:100%;}
+ul.banner-list li.slider{width:100%; height:100%;}
+ul.banner-list li:nth-child(1){ background: #03a8a5; }
+ul.banner-list li:nth-child(2){ background: #054faa; }
+ul.banner-list li:nth-child(3){ background: #8b03a8; }
+ul.banner-list li:nth-child(4){ background: #d9d902; }
+ul.banner-list li:nth-child(5){ background: #a80303; }
+
+ul.banner-list li .slider-caption{ display:flex; align-items: center; justify-content: center; height:100%; color:#fff; font-size:20px; letter-spacing: 2px; text-transform:uppercase;}
+
+.prev, .next{ border: 1px solid #fff; text-align: center; position: absolute; top: 50%; margin-top: -30px; color: #fff; padding: 8px 14px; border-radius: 35px; cursor:pointer;}
+
+.prev{ left:10px;}
+.next{right:10px;}
+
+.tab-indicator {position: absolute; width: 100%; bottom: 0;	padding-bottom: 15px;}
+.tab-indicator ul{text-align:center; }
+.tab-indicator ul li{display:inline-block; display: inline-block; width: 10px; height: 10px; border-radius: 35px; background: #fff; }
+.tab-indicator ul li.activetab{background:#ffef55;}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+

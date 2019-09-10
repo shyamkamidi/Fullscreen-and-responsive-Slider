@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>:: Banner Slider ::</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<section class="banner-main">
+	<ul class="banner-list">
+	
+		<li class="slider fade" slidertab="0"><span class="slider-caption">Banner One</span></li>
+		<li class="slider fade" slidertab="1"><span class="slider-caption">Banner Two</span></li>
+		<li class="slider fade" slidertab="2"><span class="slider-caption">Banner Three</span></li>
+		<li class="slider fade" slidertab="3"><span class="slider-caption">Banner Four</span></li>
+		<li class="slider fade" slidertab="4"><span class="slider-caption">Banner Five</span></li>
+			
+	</ul>
+		<div class="prev">&#8249;</div>
+		<div class="next">&#8250;</div>
+				
+	<div class="tab-indicator">
+		<ul>
+			<li class="tab activetab"></li>
+			<li class="tab"></li>
+			<li class="tab"></li>
+			<li class="tab"></li>
+			<li class="tab"></li>
+		</ul>
+	</div>
+</section>
+	<script type="text/jscript">
+$(document).ready(function(){
+	$('.slider').hide();
+	$('.prev').hide();
+	$(".slider").eq(0).show();
+	var imagescount = parseInt($('.slider').length);
+	
+	
+$('.prev').click(function(){
+	$('.next').show();
+	var currenttab = parseInt($(".slider:visible").attr('slidertab'));
+	console.log(currenttab+(imagescount-2));
+	console.log(imagescount);
+	
+	if(currenttab+(imagescount) != imagescount){
+	console.log('true')
+	$('.slider').hide();
+	$(".tab").removeClass('activetab');
+	$(".slider").eq(currenttab-1).show();
+	$(".tab").eq(currenttab-1).addClass('activetab');
+	}
+	
+	if(currenttab+(imagescount-1) == imagescount){
+		$('.prev').hide();
+	}else{
+		$('.prev').show();
+	}
+});
+
+$('.next').click(function(){
+	$('.prev').show();
+	var currenttab = parseInt($(".slider:visible").attr('slidertab'));
+	if(currenttab+2 == imagescount){
+		$('.next').hide();
+	}else{
+		$('.next').show();
+	}
+	if(currenttab!=imagescount){
+	$(".tab").removeClass('activetab');
+	$('.slider').hide();
+	$(".slider").eq(currenttab+1).show();
+	$(".tab").eq(currenttab+1).addClass('activetab');
+	}
+	
+});
+});
+</script>
+</body>
+</html>
